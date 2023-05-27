@@ -1,9 +1,11 @@
-const express = require("express");
+import express from "express";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import fileUpload from "express-fileupload";
+import path from "path";
+
+// Create Express app
 const app = express();
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
-const fileUpload = require("express-fileupload");
-const path = require("path");
 
 const errorMiddleware = require("./middleware/error");
 
