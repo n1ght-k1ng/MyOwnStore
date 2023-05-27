@@ -25,12 +25,12 @@ The project has a directory structure with different folders and files for both 
 * The "Config" folder contains configuration files for the backend application, such as the "config.env" file.
 * The "Controllers" folder handles specific functionalities and processes requests, with separate files for different controllers such as orderController, paymentController, productController, and userController.
 * The "Middleware" folder provides functions executed before or after processing requests or responses, including authentication and error handling middleware.
-* The "Models" folder defines the structure and logic of the application's data, with separate files for orderModel, productSchema, and userModel.
+* The "Models" folder defines the structure and logic of the application's data, with separate files for orderModel, productSchema, and userModel. 
 * The "Routes" folder defines API endpoints for different functionalities, with separate files for orderRoutes, paymentRoute, productRoute, and userRoute.
 * The "Utils" folder contains utility functions used in the backend application, including apiFeatures for building dynamic MongoDB queries, ErrorHandler for error handling, sendToken for sending JWT tokens, and sendEmail for sending emails.
 
 In summary, the directory structure separates frontend and backend components, with clear organization of files and folders based on their functionality. The frontend handles UI components, state management, actions, and routing, while the backend focuses on controllers, models, routes, and utilities for data handling, authentication, and error management.
-## MyOwnStore-Backend File Structure and High Level Compenents
+## MyOwnStore-Backend File Structure and High Level Compenents - D Nikhil Reddy 
 
 ### **Config**: Contains configuration files for the backend application.
 
@@ -56,6 +56,7 @@ In summary, the directory structure separates frontend and backend components, w
 
 
 ## **Models**: Define the structure and logic of the application's data.
+
 * **orderModel.js** - This model has objects that include shippingInfo, orderItems, user, paymentInfo, paidAt, itemsPrice, taxPrice, shippingPrice, totalPrice, orderStatus, deliveredAt, and createdAt. 
 * **productSchema.js** -  The productSchema includes various properties such as name, description, price, ratings, images, category, Stock, numOfReviews, reviews, user, and createdAt.
 * **userModel.js** - The userSchema includes various properties such as name, email, password, avatar, role, createdAt, resetPasswordToken, and resetPasswordExpire.The schema also includes pre-save middleware that hashes the password before saving it to the database
@@ -123,7 +124,8 @@ A breakdown of the class methods:
  
  
 
-# FrontEnd
+# FrontEnd - Adhithya Sree Mohan and Irhaam Zuhayr
+
 **Frontend Components**:
 
 1. **Public**: Contains static assets and the main HTML file.
