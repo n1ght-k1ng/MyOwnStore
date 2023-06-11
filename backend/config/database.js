@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const connectDatabase = async () => {
   try{
   mongoose
@@ -13,3 +14,5 @@ const connectDatabase = async () => {
   console.log(error, "tytyt");
   process.exit(1);
 }}
+
+module.exports = connectDatabase;

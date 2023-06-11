@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 
 const ConfirmOrder = ({ history }) => {
-  const { Info, cartItems } = useSelector((state) => state.cart);
+  const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
 
   const subtotal = cartItems.reduce(
@@ -15,18 +15,18 @@ const ConfirmOrder = ({ history }) => {
     0
   );
 
-  const Charges = subtotal > 1000 ? 0 : 200;
+  const shippingCharges = subtotal > 1000 ? 0 : 200;
 
   const tax = subtotal * 0.18;
 
-  const totalPrice = subtotal + tax + Charges;
+  const totalPrice = subtotal + tax + shippingCharges;
 
-  const address = `${Info.address}, ${Info.city}, ${Info.state}, ${Info.pinCode}, ${Info.country}`;
+  const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
 
   const proceedToPayment = () => {
     const data = {
       subtotal,
-      Charges,
+      shippingCharges,
       tax,
       totalPrice,
     };
@@ -42,16 +42,16 @@ const ConfirmOrder = ({ history }) => {
       <CheckoutSteps activeStep={1} />
       <div className="confirmOrderPage">
         <div>
-          <div className="confirmArea">
-            <Typography> Info</Typography>
-            <div className="confirmAreaBox">
+          <div className="confirmshippingArea">
+            <Typography>Shipping Info</Typography>
+            <div className="confirmshippingAreaBox">
               <div>
                 <p>Name:</p>
                 <span>{user.name}</span>
               </div>
               <div>
                 <p>Phone:</p>
-                <span>{Info.phoneNo}</span>
+                <span>{shippingInfo.phoneNo}</span>
               </div>
               <div>
                 <p>Address:</p>
@@ -88,8 +88,8 @@ const ConfirmOrder = ({ history }) => {
                 <span>₹{subtotal}</span>
               </div>
               <div>
-                <p> Charges:</p>
-                <span>₹{Charges}</span>
+                <p>Shipping Charges:</p>
+                <span>₹{shippingCharges}</span>
               </div>
               <div>
                 <p>GST:</p>
